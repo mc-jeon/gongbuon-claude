@@ -10,7 +10,7 @@ from lessonkit import (E, Page, app_window, box, build, cards, chat_view, code_b
                        gbtn, grid, hero, kbd, mk, prompt, section, shot_list_section, sidebar, step, table, ui, wrap)
 
 OUT = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
-SITE = os.environ.get("SITE_URL", "https://aismartworkhub.github.io/gongbuon-claude/")
+SITE = os.environ.get("SITE_URL", "https://mc-jeon.github.io/gongbuon-claude/")
 PC = "설치·실습은 PC에서 해야 합니다. 휴대폰에서는 복습용으로 보세요. 그림은 탭하면 크게 보입니다."
 
 # ───────────── 프롬프트: 교안과 prompts.md가 같은 원본을 쓴다 ─────────────
@@ -166,7 +166,7 @@ p0 = wrap("".join([
          ok="세 줄 모두 <code>git version 2.…</code> / <code>Python 3.12…</code> / <code>2.… (Claude Code)</code>처럼 <b>버전 숫자</b>가 나오면 성공입니다.",
          stuck="python만 안 되면 Microsoft Store가 열릴 수 있습니다. 창을 닫고 PowerShell을 새로 연 뒤 다시 확인하세요.", one=True),
     step("0-5", "구글 드라이브 데스크톱 설치", "내 PC에 'G 드라이브'를 만들어, 드라이브를 USB처럼 쓰게 합니다.",
-         [f"크롬에서 {ui('drive.google.com/drive/download')} 접속 → {ui('데스크톱용 Drive 다운로드')}",
+         [f"크롬에서 <a href='https://www.google.com/drive/download/' target='_blank' rel='noopener'>{ui('google.com/drive/download')}</a> 접속 → 아래로 내려 {ui('데스크톱용 Drive 다운로드')}",
           "내려받은 파일 실행 → 설치", f"<b>Gemini 유료 구독 중인 구글 계정</b>으로 로그인 (2TB 저장 공간이 있는 계정)",
           f"파일 탐색기 왼쪽에 {ui('Google Drive (G:)')} 가 생겼는지 확인"],
          ok="탐색기에 <b>Google Drive (G:)</b> → <b>내 드라이브</b> 폴더가 보이면 성공입니다.",
